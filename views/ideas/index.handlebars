@@ -1,0 +1,28 @@
+{{#each ideas}}
+    <br />
+    <div class="row" id="img-product">
+        <div id="a" class="col-sm-4">
+            <center><img src="{{image}}" class="img-responsive"></center>
+        </div>
+        <div id="a" class="col-sm-8">
+            <h3>Title: {{title}}</h3>
+            <p><b>Category:</b> {{category}}</p>
+            <p><b>Name:</b> {{name}}</p>
+            <p><b>Details:</b> {{details}}</p>
+            <p><b>Phone:</b> {{phone}}</p>
+            <a href="/ideas/message/{{id}}" style="margin-bottom:10px" class="btn btn-success btn-block">Send Message</a>
+            {{!-- <a href="/ideas/edit/{{id}}" style="margin-bottom:10px" class="btn btn-success btn-block">Edit</a>
+        <form action="/ideas/{{id}}?_method=DELETE" method="post">
+            <input type="hidden" name="_method" value="DELETE" />
+            <input type="submit" class="btn btn-danger btn-block" value="Delete" />
+        </form> --}}
+        </div>
+    </div>
+
+{{else}}
+    <div class="jumbotron">
+        <p class="h1 text-center">No Ads to show</p>
+    </div>
+{{/each}}
+
+ 

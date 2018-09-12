@@ -1,0 +1,65 @@
+<div class="card card-body">
+  <h3>Video Idea</h3>
+  <form action="/ideas" method="post">
+    <div class="form-group">
+      <label for="title">Title:</label>
+      <input type="text" class="form-control" id="title" placeholder="Enter title" name="title" required>
+    </div>
+    <div class="form-group">
+      <label for="category">Category:</label>
+        <select id="category" class="form-control" name="category" >
+          <option>property</option>
+          <option>vehicles</option>
+          <option>electronics</option>
+          <option>books & sports</option>
+          <option>jobs</option>
+          <option>buisness</option>
+          <option>beauty</option>
+          <option>animals</option>
+        </select>
+    </div>
+    <div class="form-group">
+      <label for="details">Details</label>
+      <textarea class="form-control" id="description" name="details" required></textarea>
+    </div>
+        <div class="form-group">
+            <label for="Image">Image:</label>
+            <input type="file" class="form-control" onchange="encodeImageFileAsURL(this)" required/>
+            <input id="imag" type="text" class="form-control" name="image" >
+            <img id="img" src="" class="img-responsive" width="70">
+        </div>
+        <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" class="form-control" id="name" placeholder="Enter name" name="name" required>
+        </div>
+        <div class="form-group">
+            <label for="Phone">Phone:</label>
+            <input type="text" class="form-control" id="phone" placeholder="Enter phone" name="phone" required>
+        </div>
+        <div class="form-group">
+            <label for="city">City:</label>
+            <input type="text" class="form-control" id="city" placeholder="Enter city" name="city" required>
+        </div>
+        <div class="form-group">
+            <label for="Price">Price:</label>
+            <input type="number" class="form-control" id="price" placeholder="Enter price" name="price" required>
+        </div>
+        
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+ <script>
+       function encodeImageFileAsURL(element) {
+  var file = element.files[0];
+  var reader = new FileReader();
+  reader.onloadend = function() {
+    console.log('RESULT', reader.result);
+    document.getElementById('img').setAttribute('src', reader.result);
+    document.getElementById('imag').value = reader.result;
+  }
+  reader.readAsDataURL(file);
+}
+
+    </script>
